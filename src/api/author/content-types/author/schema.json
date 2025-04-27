@@ -4,7 +4,8 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "Author"
+    "displayName": "Author",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,6 +23,24 @@
       "relation": "oneToMany",
       "target": "api::post.post",
       "mappedBy": "author"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "Content Creator",
+        "Technical Writer",
+        "Software Engineer",
+        "Product Manager",
+        "Marketing Specialist"
+      ]
     }
   }
 }

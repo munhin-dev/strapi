@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
+    description: '';
     displayName: 'Author';
     pluralName: 'authors';
     singularName: 'author';
@@ -380,6 +381,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    avatar: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -392,6 +394,15 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
     publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.Enumeration<
+      [
+        'Content Creator',
+        'Technical Writer',
+        'Software Engineer',
+        'Product Manager',
+        'Marketing Specialist',
+      ]
+    >;
     slug: Schema.Attribute.UID<'name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -433,7 +444,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
   collectionName: 'posts';
   info: {
     description: '';
-    displayName: 'post';
+    displayName: 'Post';
     pluralName: 'posts';
     singularName: 'post';
   };
