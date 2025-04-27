@@ -458,9 +458,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
       'api::category.category'
     >;
     content: Schema.Attribute.Blocks;
-    coverImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    coverImage: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
