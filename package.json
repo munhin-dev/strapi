@@ -19,20 +19,22 @@
     "@strapi/plugin-users-permissions": "5.12.6",
     "@strapi/strapi": "5.12.6",
     "better-sqlite3": "11.3.0",
+    "pg": "^8.16.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
+    "@types/minimatch": "^6.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "typescript": "^5"
   },
   "engines": {
-    "node": ">=18.0.0 <=22.x.x",
-    "npm": ">=6.0.0"
+    "node": "20.x",
+    "npm": "10.x"
   },
   "strapi": {
     "uuid": "1e19b93a-8daf-4beb-aa6a-d1f9bbf16121"
